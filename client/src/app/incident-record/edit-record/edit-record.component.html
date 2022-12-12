@@ -1,0 +1,67 @@
+<div class="all">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-5 col-md-12">
+                <h2>Update Incident</h2>
+
+                <div *ngIf="message" class="alert alert-success" role="alert">
+                    <h4 class="alert-heading">Incident Updated!</h4>
+                    <button (click)="removeMessage()" type="button" class="close" data-dismiss="alert"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                </div>
+
+                <!--form group - added formControlName-->
+                <form [formGroup]="editIncident" (ngSubmit)="UpdateData()">
+
+                    <div class="form-group p-3">
+                        <label for="nameTextField" class="form-label">Name </label>
+                        <input type="text" class="form-control" id="nameTextField" placeholder="Enter the Name"
+                            name="name" formControlName="name" required>
+                    </div>
+
+                    <div class="form-group p-3">
+                        <label for="dateTextField" class="form-label">Date (DDMMYY) </label>
+                        <input type="text" class="form-control" id="dateTextField" placeholder="Enter the Date"
+                            name="date" formControlName="date" required>
+                    </div>
+
+                    <div class="form-group p-3">
+                        <label for="statusTextField" class="form-label">Status </label>
+                        <input type="text" class="form-control" id="statusTextField" value="New" name="status"
+                            formControlName="status">
+                    </div>
+
+                    <div class="form-group p-3">
+                        <label for="locationTextField" class="form-label">Location </label>
+                        <input type="text" class="form-control" id="locationTextField" placeholder="Enter the Location"
+                            name="location" formControlName="location" required>
+                    </div>
+
+                    <div class="form-group p-3">
+                        <label for="descriptionTextField" class="form-label">Description </label>
+                        <input type="text" class="form-control" id="descriptionTextField"
+                            placeholder="Enter the Description" name="description" formControlName="description"
+                            required>
+                    </div>
+
+                    <div class="form-group p-3">
+                        <label for="priorityNumberField" class="form-label">Priority </label>
+                        <input type="number" class="form-control" id="priorityNumberField"
+                            placeholder="Enter the priority" name="priority" formControlName="priority" required>
+                    </div>
+
+                    <button class="btn btn-light p-2" type="submit">
+                        <i class="fas fa-edit"></i> Submit</button>
+                        &nbsp;
+
+                    <a href="/incident-list" class="btn btn-warning p-2">
+                        <i class="fas fa-undo"></i> Cancel</a>
+                </form>
+                <div>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

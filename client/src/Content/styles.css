@@ -1,0 +1,50 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+.centered {
+    text-align: center;
+    padding: 150px 200px;
+}
+
+
+.button {
+  background-color: #FFFFFF;
+  border: 1px solid #222222;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: auto;
+  color: #6d5f4d;
+}
+
+a:link {
+    text-decoration: none;
+    color: #6d5f4d;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #6d5f4d;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #deb887;
+}
+
+a:active {
+    text-decoration: none;
+    color: #6d5f4d;
+}

@@ -1,0 +1,111 @@
+<div class="container">
+    <div class="row">
+        <h2>Incident Record</h2>
+        <div>
+            <br>
+        </div>
+
+        <!--create incident-->
+        <div>
+            <a href="/add" class="btn btn-block btn-outline-secondary" role="button">
+            <i class="fas fa-plus-circle"></i> Make a Ticket </a>
+        </div>
+        <div>
+            <br>
+        </div>
+
+        <!--Status filter-->
+        <div class="p-2 bg-light">
+            <button class="btn btn-block w-30 btn-outline-secondary" (click)='changeStatus()'> All Status
+            </button>
+            <button *ngFor='let status of statuss' class="btn btn-block w-30 btn-outline-secondary"
+                [class.active]='status == selectedStatus' (click)='changeStatus(status)'> {{ status }}
+            </button>
+            <div>
+                <br>
+            </div>
+
+            <!--Incidents list-->
+            <table class="table table-striped table-hover">
+
+                <tr class="d-flex p-3">
+                    <th class="text-center col-1">Record Number</th>
+                    <th class="text-center col-2">Name</th>
+                    <th class="text-center col-1">Date(DDMMYY)</th>
+                    <th class="text-center col-1">Status</th>
+                    <th class="text-center col-2">Location</th>
+                    <th class="text-center col-2">Description</th>
+                    <th class="text-center col-1">Priority</th>
+
+                    <th class="text-center col-1"></th>
+                    <th class="text-center col-1"></th>
+
+                </tr>
+
+                <!--inject data into the list-->
+                <div *ngFor='let item of incidents'>
+                    
+                    <tr class="d-flex p-3">
+                        <td class="text-center col-1">
+                            000{{item.id}}-{{item.date}}
+                        </td>
+                        <td class="text-center col-2">
+                            {{item.name}}
+                        </td>
+                        <td class="text-center col-1">
+                            {{item.date}}
+                        </td>
+                        <td class="text-center col-1">
+                            {{item.status}}
+                        </td>
+                        <td class="text-center col-2">
+                            {{item.location}}
+                        </td>
+                        <td class="text-center col-2">
+                            {{item.description}}
+                        </td>
+                        <td class="text-center col-1">
+                            {{item.priority}}
+                        </td>
+
+                        <td class="text-center col-1">
+                            <a href="/edit/{{item.id}}" class="btn btn-dark btn-sm text-light">
+                                <i class="fas fa-pencil-alt"></i> Edit</a>
+                        </td>
+                        <td class="text-center col-1">
+                            <button class="btn btn-danger btn-sm text-light">
+                                <i class="fas fa-trash-alt"></i><span (click)="deleteIncident(item.id)"> Delete</span>
+                            </button>
+                        </td>
+                    </tr>
+                </div>
+            </table>
+        </div>
+
+        <div>
+            <br>
+        </div>
+
+        <div class="col">
+            <div class="float-start text-dark">
+                <select class="form-control" name="Pages" [value]='incidentsPerPage'
+                    value="Record per Page"
+                    (change)='changePageSize($event.target.value)'>
+                    <option value="5">5 per Page</option>
+                    <option value="8">8 per Page</option>
+                    <option value="15">15 per Page</option>
+                </select>
+            </div>
+
+            <div class="btn-group float-end">
+                <button *counter='let page of pageCount' (click)='changePage(page)' class="btn btn-outline-secondary"
+                    [class.active]='page == selectedPage'>
+                    {{page}}
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<br>

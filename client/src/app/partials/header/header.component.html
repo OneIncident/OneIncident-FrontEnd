@@ -1,0 +1,54 @@
+<!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
+<nav class="navbar navbar-expand-lg" style="background-color: #f6f6f1;">
+
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="./assets/images/logoOne.png" width="250" height="auto" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+                <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a class="nav-link" routerLink="/home">
+                        <i class="fas fa-lg fa-laptop-house"></i> Home</a>
+                  </li>
+
+
+                <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a class="nav-link" routerLink="/dashboard">
+                        <i class="fas fa-solid fa-chart-line"></i> Incident Dashboard</a>
+                  </li>
+
+                  <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                    <a class="nav-link" routerLink="/incident-list">
+                        <i class="fas fa-regular fa-clipboard"></i> Incident Record</a>
+                  </li>
+
+
+                <li *ngIf='isLoggedIn()' class="nav-item ml-5 " [routerLinkActive]="['active']">
+                    <a class="nav-link text-warning" routerLink="/admin/main"><i class="fas fa-lg fa-user-shield"></i> Admin </a>
+                  </li>
+          
+                <li *ngIf='isLoggedIn()'
+                    class="navbar-text text-success ml-5 mr-5 d-none d-lg-inline">
+                    <i class="fas fa-lg fa-user"></i> Welcome, {{ user.displayName }}
+                </li>
+        
+        
+                <li *ngIf='isLoggedIn()' class="nav-item">
+                    <a (click)='onLogoutClick()' routerLink='/logout' class="nav-link" href="/login">
+                    <i class="fas fa-lg fa-sign-out-alt"></i> Logout </a>
+                </li>
+        
+                <li *ngIf='!isLoggedIn()' class="nav-item">
+                    <a class="nav-link" routerLink="/login"><i class="fas fa-lg fa-sign-in-alt"></i> Login </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
