@@ -30,8 +30,8 @@ export class RestDataSource
               private jwtService: JwtHelperService)
   {
     this.user = new User();
-    // this.baseUrl = `${http}://${location.hostname}:${PORT}/`;
-    this.baseUrl = `/api/`;
+    this.baseUrl = `${http}://${location.hostname}:${PORT}/`;
+    // this.baseUrl = `/api/`;
   }
   
 
