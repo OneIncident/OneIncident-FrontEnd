@@ -1,6 +1,8 @@
 const app = require("../server/config/app");
 
-let port = process.env.PORT || 8080;
+let port = process.env.PORT || 3000;
+
+app.listen(port, cb);
 
 app.use(express.static('public'));
 app.get('*',(req, res)=>{
