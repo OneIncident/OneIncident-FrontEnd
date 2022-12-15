@@ -5,6 +5,7 @@
     "node": "18.10.0"
   },
   "scripts": {
+    "install":"npm install",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
