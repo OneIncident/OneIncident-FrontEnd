@@ -5,12 +5,13 @@
     "node": "18.10.0"
   },
   "scripts": {
-    "installng":"npm install -g @angular/cl",
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "test": "ng test",
-    "json": "json-server data.js -p 3500 -m authMiddleware.js"
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
