@@ -5,7 +5,7 @@
     "node": "18.10.0"
   },
   "scripts": {
-    "install":"npm install",
+    "installng":"npm install -g @angular/cl",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
